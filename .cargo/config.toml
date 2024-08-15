@@ -8,5 +8,8 @@ rustflags = [
 [profile.rust-analyzer]
 inherits = "dev"
 
+[build]
+rustflags = ["-Zthreads=16", "-Ctarget-cpu=native"]
+
 # [env]
 # RUST_BACKTRACE="full"

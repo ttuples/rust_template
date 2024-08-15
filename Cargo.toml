@@ -1,6 +1,18 @@
+cargo-features = ["codegen-backend"]
+
 [package]
 name = "rust_template"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+
+[profile.dev]
+debug = 0
+codegen-backend = "cranelift"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+codegen-backend = "cranelift"
